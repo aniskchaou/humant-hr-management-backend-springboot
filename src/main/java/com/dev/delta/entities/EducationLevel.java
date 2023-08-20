@@ -12,6 +12,10 @@ public class EducationLevel {
 	String name;
 	String years;
 	
+	String certificateLevel;
+	String fieldofStudy;
+	String school;
+	
 	public EducationLevel() {
 		// TODO Auto-generated constructor stub
 	}
@@ -20,6 +24,32 @@ public class EducationLevel {
 		super();
 		this.name = name;
 		this.years = years;
+	}
+	
+	
+
+	public String getCertificateLevel() {
+		return certificateLevel;
+	}
+
+	public void setCertificateLevel(String certificateLevel) {
+		this.certificateLevel = certificateLevel;
+	}
+
+	public String getFieldofStudy() {
+		return fieldofStudy;
+	}
+
+	public void setFieldofStudy(String fieldofStudy) {
+		this.fieldofStudy = fieldofStudy;
+	}
+
+	public String getSchool() {
+		return school;
+	}
+
+	public void setSchool(String school) {
+		this.school = school;
 	}
 
 	public Long getId() {

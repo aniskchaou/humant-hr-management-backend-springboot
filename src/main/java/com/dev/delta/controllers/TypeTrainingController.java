@@ -58,8 +58,8 @@ public class TypeTrainingController {
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<String> deleteTypeTraining(@PathVariable Long id) {
+	public void deleteTypeTraining(@PathVariable Long id) {
 		typeTrainingService.delete(id);
-		return new ResponseEntity<String>("typeTraining was deleted", HttpStatus.OK);
+		//return new ResponseEntity<String>("typeTraining was deleted", HttpStatus.OK);
 	}
 }

@@ -10,7 +10,7 @@ public class Departement {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;
 	String name; 
-	
+	String manager;
 	public Departement() {
 		// TODO Auto-generated constructor stub
 	}
@@ -18,6 +18,15 @@ public class Departement {
 	public Departement(String name) {
 		super();
 		this.name = name;
+	}
+	
+
+	public String getManager() {
+		return manager;
+	}
+
+	public void setManager(String manager) {
+		this.manager = manager;
 	}
 
 	public Long getId() {

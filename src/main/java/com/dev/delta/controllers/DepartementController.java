@@ -3,6 +3,8 @@ package com.dev.delta.controllers;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -57,8 +59,8 @@ public class DepartementController {
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<String> deleteDepartement(@PathVariable Long id) {
+	public void deleteDepartement(@PathVariable Long id) {
 		departementService.delete(id);
-		return new ResponseEntity<String>("departement was deleted", HttpStatus.OK);
+		
 	}
 }

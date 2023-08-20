@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Complain {
@@ -11,24 +13,28 @@ public class Complain {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;
-	String ComplainBy;
-	String ComplainAgainst;
-	String ComplainTitle;
-	String ComplainDate;
-	String Description;
+	@ManyToOne
+	@JoinColumn(name="complain_by_id")
+	Employee complainBy;
+	@ManyToOne
+	@JoinColumn(name="complain_against_id")
+	Employee complainAgainst;
+	String complainTitle;
+	String complainDate;
+	String description;
 	
 	public Complain() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Complain(String complainBy, String complainAgainst, String complainTitle, String complainDate,
+	public Complain(Employee complainBy, Employee complainAgainst, String complainTitle, String complainDate,
 			String description) {
 		super();
-		ComplainBy = complainBy;
-		ComplainAgainst = complainAgainst;
-		ComplainTitle = complainTitle;
-		ComplainDate = complainDate;
-		Description = description;
+		this.complainBy = complainBy;
+		this.complainAgainst = complainAgainst;
+		this.complainTitle = complainTitle;
+		this.complainDate = complainDate;
+		this.description = description;
 	}
 
 	public Long getId() {
@@ -39,44 +45,46 @@ public class Complain {
 		this.id = id;
 	}
 
-	public String getComplainBy() {
-		return ComplainBy;
+
+
+	public Employee getComplainBy() {
+		return complainBy;
 	}
 
-	public void setComplainBy(String complainBy) {
-		ComplainBy = complainBy;
+	public void setComplainBy(Employee complainBy) {
+		this.complainBy = complainBy;
 	}
 
-	public String getComplainAgainst() {
-		return ComplainAgainst;
+	public Employee getComplainAgainst() {
+		return complainAgainst;
 	}
 
-	public void setComplainAgainst(String complainAgainst) {
-		ComplainAgainst = complainAgainst;
+	public void setComplainAgainst(Employee complainAgainst) {
+		this.complainAgainst = complainAgainst;
 	}
 
 	public String getComplainTitle() {
-		return ComplainTitle;
+		return complainTitle;
 	}
 
 	public void setComplainTitle(String complainTitle) {
-		ComplainTitle = complainTitle;
+		this.complainTitle = complainTitle;
 	}
 
 	public String getComplainDate() {
-		return ComplainDate;
+		return complainDate;
 	}
 
 	public void setComplainDate(String complainDate) {
-		ComplainDate = complainDate;
+		this.complainDate = complainDate;
 	}
 
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
 	
 	

@@ -12,37 +12,39 @@ public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;
-	String FullName;
-	String Phone;
-	String BirthDay;
-	String Gender;
-	String PresentAddress;
-	String PermanentAddress;
-	String Photo;
-	String Note;
+	String fullName;
+	String phone;
+	String birthDay;
+	String gender;
+	String presentAddress;
+	String permanentAddress;
+	String photo;
+	String note;
 	@ManyToOne
 	@JoinColumn(name="departement_id")
 	Departement departement;
 	@ManyToOne
 	@JoinColumn(name="job_id")
 	Job job;
-	String JoiningDate;
+	String joiningDate;
 	@ManyToOne
 	@JoinColumn(name="salary_id")
 	Salary salary;
-	String EmergencyContactName;
-	String ContactNumber;
-	String EmergencyContactNumber;
-	String ContactNote;
-	String Resume;
-	String OfferLetter;
-	String JoiningLetter;
-	String ContractAgreement;
-	String IdentityProof;
+	String emergencyContactNumber;
+	String contactNumber;
+	String contactNote;
+	String resume;
+	String offerLetter;
+	String joiningLetter;
+	String contractAgreement;
+	String identityProof;
 	@ManyToOne
 	@JoinColumn(name="contract_type_id")
 	ContractType contractType;
-	
+	String maritalStatus;
+	String numberOfChildren;
+	String coach;
+	String manager;
 	public Employee() {
 		// TODO Auto-generated constructor stub
 	}
@@ -53,28 +55,28 @@ public class Employee {
 			String emergencyContactNumber, String contactNote, String resume, String offerLetter, String joiningLetter,
 			String contractAgreement, String identityProof, ContractType contractType) {
 		super();
-		FullName = fullName;
-		Phone = phone;
-		BirthDay = birthDay;
-		Gender = gender;
-		PresentAddress = presentAddress;
-		PermanentAddress = permanentAddress;
-		Photo = photo;
-		Note = note;
+		this.fullName = fullName;
+		this.phone = phone;
+		this.birthDay = birthDay;
+		this.gender = gender;
+		this.presentAddress = presentAddress;
+		this.permanentAddress = permanentAddress;
+		this.photo = photo;
+		this.note = note;
 		this.departement = departement;
 		
 		this.job = job;
-		JoiningDate = joiningDate;
+		this.joiningDate = joiningDate;
 		this.salary = salary;
-		EmergencyContactName = emergencyContactName;
-		ContactNumber = contactNumber;
-		EmergencyContactNumber = emergencyContactNumber;
-		ContactNote = contactNote;
-		Resume = resume;
-		OfferLetter = offerLetter;
-		JoiningLetter = joiningLetter;
-		ContractAgreement = contractAgreement;
-		IdentityProof = identityProof;
+		this.emergencyContactNumber = emergencyContactName;
+		this.contactNumber = contactNumber;
+		this.emergencyContactNumber = emergencyContactNumber;
+		this.contactNote = contactNote;
+		this.resume = resume;
+		this.offerLetter = offerLetter;
+		this.joiningLetter = joiningLetter;
+		this.contractAgreement = contractAgreement;
+		this.identityProof = identityProof;
 		this.contractType = contractType;
 	}
 
@@ -87,67 +89,67 @@ public class Employee {
 	}
 
 	public String getFullName() {
-		return FullName;
+		return fullName;
 	}
 
 	public void setFullName(String fullName) {
-		FullName = fullName;
+		this.fullName = fullName;
 	}
 
 	public String getPhone() {
-		return Phone;
+		return phone;
 	}
 
 	public void setPhone(String phone) {
-		Phone = phone;
+		this.phone = phone;
 	}
 
 	public String getBirthDay() {
-		return BirthDay;
+		return birthDay;
 	}
 
 	public void setBirthDay(String birthDay) {
-		BirthDay = birthDay;
+		this.birthDay = birthDay;
 	}
 
 	public String getGender() {
-		return Gender;
+		return gender;
 	}
 
 	public void setGender(String gender) {
-		Gender = gender;
+		this.gender = gender;
 	}
 
 	public String getPresentAddress() {
-		return PresentAddress;
+		return presentAddress;
 	}
 
 	public void setPresentAddress(String presentAddress) {
-		PresentAddress = presentAddress;
+		this.presentAddress = presentAddress;
 	}
 
 	public String getPermanentAddress() {
-		return PermanentAddress;
+		return permanentAddress;
 	}
 
 	public void setPermanentAddress(String permanentAddress) {
-		PermanentAddress = permanentAddress;
+		this.permanentAddress = permanentAddress;
 	}
 
 	public String getPhoto() {
-		return Photo;
+		return photo;
 	}
 
 	public void setPhoto(String photo) {
-		Photo = photo;
+		this.photo = photo;
 	}
 
 	public String getNote() {
-		return Note;
+		return note;
 	}
 
 	public void setNote(String note) {
-		Note = note;
+		this.note = note;
 	}
 
 	public Departement getDepartement() {
@@ -169,11 +171,11 @@ public class Employee {
 	}
 
 	public String getJoiningDate() {
-		return JoiningDate;
+		return joiningDate;
 	}
 
 	public void setJoiningDate(String joiningDate) {
-		JoiningDate = joiningDate;
+		this.joiningDate = joiningDate;
 	}
 
 	public Salary getSalary() {
@@ -184,76 +186,64 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	public String getEmergencyContactName() {
-		return EmergencyContactName;
-	}
-
-	public void setEmergencyContactName(String emergencyContactName) {
-		EmergencyContactName = emergencyContactName;
-	}
+	
 
 	public String getContactNumber() {
-		return ContactNumber;
+		return contactNumber;
 	}
 
 	public void setContactNumber(String contactNumber) {
-		ContactNumber = contactNumber;
+		this.contactNumber = contactNumber;
 	}
 
-	public String getEmergencyContactNumber() {
-		return EmergencyContactNumber;
-	}
-
-	public void setEmergencyContactNumber(String emergencyContactNumber) {
-		EmergencyContactNumber = emergencyContactNumber;
-	}
+	
 
 	public String getContactNote() {
-		return ContactNote;
+		return contactNote;
 	}
 
 	public void setContactNote(String contactNote) {
-		ContactNote = contactNote;
+		this.contactNote = contactNote;
 	}
 
 	public String getResume() {
-		return Resume;
+		return resume;
 	}
 
 	public void setResume(String resume) {
-		Resume = resume;
+		this.resume = resume;
 	}
 
 	public String getOfferLetter() {
-		return OfferLetter;
+		return offerLetter;
 	}
 
 	public void setOfferLetter(String offerLetter) {
-		OfferLetter = offerLetter;
+		this.offerLetter = offerLetter;
 	}
 
 	public String getJoiningLetter() {
-		return JoiningLetter;
+		return joiningLetter;
 	}
 
 	public void setJoiningLetter(String joiningLetter) {
-		JoiningLetter = joiningLetter;
+		this.joiningLetter = joiningLetter;
 	}
 
 	public String getContractAgreement() {
-		return ContractAgreement;
+		return contractAgreement;
 	}
 
 	public void setContractAgreement(String contractAgreement) {
-		ContractAgreement = contractAgreement;
+		this.contractAgreement = contractAgreement;
 	}
 
 	public String getIdentityProof() {
-		return IdentityProof;
+		return identityProof;
 	}
 
 	public void setIdentityProof(String identityProof) {
-		IdentityProof = identityProof;
+		this.identityProof = identityProof;
 	}
 
 	public ContractType getContractType() {
@@ -262,6 +252,46 @@ public class Employee {
 
 	public void setContractType(ContractType contractType) {
 		this.contractType = contractType;
+	}
+
+	public String getEmergencyContactNumber() {
+		return emergencyContactNumber;
+	}
+
+	public void setEmergencyContactNumber(String emergencyContactNumber) {
+		this.emergencyContactNumber = emergencyContactNumber;
+	}
+
+	public String getMaritalStatus() {
+		return maritalStatus;
+	}
+
+	public void setMaritalStatus(String maritalStatus) {
+		this.maritalStatus = maritalStatus;
+	}
+
+	public String getNumberOfChildren() {
+		return numberOfChildren;
+	}
+
+	public void setNumberOfChildren(String numberOfChildren) {
+		this.numberOfChildren = numberOfChildren;
+	}
+
+	public String getCoach() {
+		return coach;
+	}
+
+	public void setCoach(String coach) {
+		this.coach = coach;
+	}
+
+	public String getManager() {
+		return manager;
+	}
+
+	public void setManager(String manager) {
+		this.manager = manager;
 	}
 	
 	

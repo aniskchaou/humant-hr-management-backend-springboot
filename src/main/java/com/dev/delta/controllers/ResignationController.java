@@ -57,8 +57,8 @@ public class ResignationController {
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<String> deleteResignation(@PathVariable Long id) {
+	public void deleteResignation(@PathVariable Long id) {
 		resignationService.delete(id);
-		return new ResponseEntity<String>("resignation was deleted", HttpStatus.OK);
+		//return new ResponseEntity<String>("resignation was deleted", HttpStatus.OK);
 	}
 }

@@ -58,6 +58,6 @@ public class TerminationService {
 	 * @param id
 	 */
 	public void delete(Long id) {
-		terminationRepository.delete(terminationRepository.findById(id).get());
+		terminationRepository.deleteById(id);
 	}
 }

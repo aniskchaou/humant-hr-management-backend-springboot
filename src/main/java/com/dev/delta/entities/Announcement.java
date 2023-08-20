@@ -14,32 +14,28 @@ public class Announcement {
 	Long id;
 	String Title;
 	@ManyToOne
-	@JoinColumn(name="location_id")
-	Location Location;
-	@ManyToOne
 	@JoinColumn(name="departement_id")
-	Departement Department;
-	String StartDate;
-	String EndDate;
-	String Attachment;
-	String Summary;
-	String Description;
+	Departement department;
+	String startDate;
+	String endDate;
+	String attachment;
+	String summary;
+	String description;
 	
 	public Announcement() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Announcement(String title, com.dev.delta.entities.Location location, Departement department,
+	public Announcement(String title, Departement department,
 			String startDate, String endDate, String attachment, String summary, String description) {
 		super();
 		Title = title;
-		Location = location;
-		Department = department;
-		StartDate = startDate;
-		EndDate = endDate;
-		Attachment = attachment;
-		Summary = summary;
-		Description = description;
+		this.department = department;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.attachment = attachment;
+		this.summary = summary;
+		this.description = description;
 	}
 
 	public Long getId() {
@@ -58,60 +54,54 @@ public class Announcement {
 		Title = title;
 	}
 
-	public Location getLocation() {
-		return Location;
-	}
 
-	public void setLocation(Location location) {
-		Location = location;
-	}
 
 	public Departement getDepartment() {
-		return Department;
+		return department;
 	}
 
 	public void setDepartment(Departement department) {
-		Department = department;
+		this.department = department;
 	}
 
 	public String getStartDate() {
-		return StartDate;
+		return startDate;
 	}
 
 	public void setStartDate(String startDate) {
-		StartDate = startDate;
+		this.startDate = startDate;
 	}
 
 	public String getEndDate() {
-		return EndDate;
+		return endDate;
 	}
 
 	public void setEndDate(String endDate) {
-		EndDate = endDate;
+		this.endDate = endDate;
 	}
 
 	public String getAttachment() {
-		return Attachment;
+		return attachment;
 	}
 
 	public void setAttachment(String attachment) {
-		Attachment = attachment;
+		this.attachment = attachment;
 	}
 
 	public String getSummary() {
-		return Summary;
+		return summary;
 	}
 
 	public void setSummary(String summary) {
-		Summary = summary;
+		this.summary = summary;
 	}
 
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
 	
 	

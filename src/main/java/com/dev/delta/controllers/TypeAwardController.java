@@ -59,8 +59,8 @@ public class TypeAwardController {
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<String> deleteTypeAward(@PathVariable Long id) {
+	public void deleteTypeAward(@PathVariable Long id) {
 		typeAwrdService.delete(id);
-		return new ResponseEntity<String>("typeAwrd was deleted", HttpStatus.OK);
+		//return "deleted";
 	}
 }

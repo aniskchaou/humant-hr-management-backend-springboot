@@ -59,8 +59,8 @@ public class TrainingController {
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<String> deleteTraining(@PathVariable Long id) {
+	public void deleteTraining(@PathVariable Long id) {
 		trainingService.delete(id);
-		return new ResponseEntity<String>("training was deleted", HttpStatus.OK);
+		//return new ResponseEntity<String>("training was deleted", HttpStatus.OK);
 	}
 }

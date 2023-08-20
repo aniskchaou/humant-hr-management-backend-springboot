@@ -3,8 +3,11 @@ package com.dev.delta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.autoconfigure.security.SecurityDataConfiguration;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
@@ -13,7 +16,7 @@ import com.dev.delta.dto.AwardDTO;
 "com.dev.delta.services" }) // to scan repository files
 @EntityScan("com.dev.delta.entities")
 @EnableJpaRepositories("com.dev.delta.repositories")
-@SpringBootApplication
+@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 public class SpringbootHumantCodecanyonApplication implements CommandLineRunner{
 
 	@Autowired

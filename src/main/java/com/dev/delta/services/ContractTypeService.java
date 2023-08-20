@@ -60,6 +60,6 @@ public class ContractTypeService {
 	 * @param id
 	 */
 	public void delete(Long id) {
-		contractTypeRepository.delete(contractTypeRepository.findById(id).get());
+		contractTypeRepository.deleteById(id);
 	}
 }

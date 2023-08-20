@@ -57,8 +57,8 @@ public class TerminationController {
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<String> deleteTermination(@PathVariable Long id) {
+	public void deleteTermination(@PathVariable Long id) {
 		terminationService.delete(id);
-		return new ResponseEntity<String>("termination was deleted", HttpStatus.OK);
+		//return new ResponseEntity<String>("termination was deleted", HttpStatus.OK);
 	}
 }

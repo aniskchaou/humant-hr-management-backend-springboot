@@ -58,6 +58,6 @@ public class CityService {
 	 * @param id
 	 */
 	public void delete(Long id) {
-		cityRepository.delete(cityRepository.findById(id).get());
+		cityRepository.deleteById(id);
 	}
 }

@@ -16,28 +16,25 @@ public class Resignation {
 	Long id;
 	@ManyToOne
 	@JoinColumn(name="employee_id")
-	Employee EmployeeName;
+	Employee employeeName;
 	@ManyToOne
 	@JoinColumn(name="departement_id")
 	Departement departement;
-	@ManyToOne
-	@JoinColumn(name="notice_id")
-	Notice NoticeDate;
-	String ResignationDate;
-	String ResignationReason;
+	String resignationDate;
+	String resignationReason;
 	
 	public Resignation() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Resignation(Employee employeeName, Departement departement, Notice noticeDate, String resignationDate,
+	public Resignation(Employee employeeName, Departement departement,  String resignationDate,
 			String resignationReason) {
 		super();
-		EmployeeName = employeeName;
+		this.employeeName = employeeName;
 		this.departement = departement;
-		NoticeDate = noticeDate;
-		ResignationDate = resignationDate;
-		ResignationReason = resignationReason;
+
+		this.resignationDate = resignationDate;
+		this.resignationReason = resignationReason;
 	}
 
 	public Long getId() {
@@ -49,11 +46,11 @@ public class Resignation {
 	}
 
 	public Employee getEmployeeName() {
-		return EmployeeName;
+		return employeeName;
 	}
 
 	public void setEmployeeName(Employee employeeName) {
-		EmployeeName = employeeName;
+		this.employeeName = employeeName;
 	}
 
 	public Departement getDepartement() {
@@ -64,28 +61,22 @@ public class Resignation {
 		this.departement = departement;
 	}
 
-	public Notice getNoticeDate() {
-		return NoticeDate;
-	}
-
-	public void setNoticeDate(Notice noticeDate) {
-		NoticeDate = noticeDate;
-	}
+	
 
 	public String getResignationDate() {
-		return ResignationDate;
+		return resignationDate;
 	}
 
 	public void setResignationDate(String resignationDate) {
-		ResignationDate = resignationDate;
+		this.resignationDate = resignationDate;
 	}
 
 	public String getResignationReason() {
-		return ResignationReason;
+		return resignationReason;
 	}
 
 	public void setResignationReason(String resignationReason) {
-		ResignationReason = resignationReason;
+		this.resignationReason = resignationReason;
 	}
 	
 	

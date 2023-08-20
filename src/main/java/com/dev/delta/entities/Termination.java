@@ -13,87 +13,81 @@ public class Termination {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;
-	@ManyToOne
-	@JoinColumn(name="type_termination_id")
-	TypeTermination typeTermination;
-	String Reason;
+	String typeTermination;
+	String reason;
 	@ManyToOne
 	@JoinColumn(name="employee_id")
 	Employee Name;
-	String NoticeDate;
-	String TerminationDate;
-	String Description;
+	String noticeDate;
+	String terminationDate;
+	String description;
 	
 	public Termination() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Termination(TypeTermination typeTermination, String reason, Employee name, String noticeDate,
-			String terminationDate, String description) {
-		super();
+	public Termination(String typeTermination, String reason, Employee name, String noticeDate, String terminationDate, String description) {
 		this.typeTermination = typeTermination;
-		Reason = reason;
+		this.reason = reason;
 		Name = name;
-		NoticeDate = noticeDate;
-		TerminationDate = terminationDate;
-		Description = description;
-	}
-
-	public Long getId() {
-		return id;
+		this.noticeDate = noticeDate;
+		this.terminationDate = terminationDate;
+		this.description = description;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public TypeTermination getTypeTermination() {
-		return typeTermination;
-	}
-
-	public void setTypeTermination(TypeTermination typeTermination) {
+	public void setTypeTermination(String typeTermination) {
 		this.typeTermination = typeTermination;
 	}
 
-	public String getReason() {
-		return Reason;
-	}
-
 	public void setReason(String reason) {
-		Reason = reason;
-	}
-
-	public Employee getName() {
-		return Name;
+		this.reason = reason;
 	}
 
 	public void setName(Employee name) {
 		Name = name;
 	}
 
-	public String getNoticeDate() {
-		return NoticeDate;
-	}
-
 	public void setNoticeDate(String noticeDate) {
-		NoticeDate = noticeDate;
-	}
-
-	public String getTerminationDate() {
-		return TerminationDate;
+		this.noticeDate = noticeDate;
 	}
 
 	public void setTerminationDate(String terminationDate) {
-		TerminationDate = terminationDate;
-	}
-
-	public String getDescription() {
-		return Description;
+		this.terminationDate = terminationDate;
 	}
 
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
-	
-	
+
+	public Long getId() {
+		return id;
+	}
+
+	public String getTypeTermination() {
+		return typeTermination;
+	}
+
+	public String getReason() {
+		return reason;
+	}
+
+	public Employee getName() {
+		return Name;
+	}
+
+	public String getNoticeDate() {
+		return noticeDate;
+	}
+
+	public String getTerminationDate() {
+		return terminationDate;
+	}
+
+	public String getDescription() {
+		return description;
+	}
 }

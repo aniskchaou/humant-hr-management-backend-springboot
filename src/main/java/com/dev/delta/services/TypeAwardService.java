@@ -58,6 +58,6 @@ public class TypeAwardService {
 	 * @param id
 	 */
 	public void delete(Long id) {
-		typeAwardRepository.delete(typeAwardRepository.findById(id).get());
+		typeAwardRepository.deleteById(id);
 	}
 }

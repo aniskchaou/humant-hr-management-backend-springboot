@@ -58,6 +58,6 @@ public class TypeTrainingService {
 	 * @param id
 	 */
 	public void delete(Long id) {
-		typeTrainingRepository.delete(typeTrainingRepository.findById(id).get());
+		typeTrainingRepository.deleteById(id);
 	}
 }

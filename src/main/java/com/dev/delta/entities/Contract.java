@@ -15,15 +15,73 @@ public class Contract {
 	@ManyToOne
 	@JoinColumn(name="employee_id")
 	Employee employee; 
-	String Subject;
-	String ContractValue;
+	String subject;
+	String contractValue;
 	@ManyToOne
 	@JoinColumn(name="contract_type_id")
-	ContractType ContractType;
-	String StartDate;
-	String EndDate;
-	String Description;
+	ContractType contractType;
+	String startDate;
+	String endDate;
+	String description;
+	String status;
+	String job;
+	String departement;
+	String salaryStructureType;
+	String workingSchedule;
 	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getJob() {
+		return job;
+	}
+
+	public void setJob(String job) {
+		this.job = job;
+	}
+
+	public String getDepartement() {
+		return departement;
+	}
+
+	public void setDepartement(String departement) {
+		this.departement = departement;
+	}
+
+	public String getSalaryStructureType() {
+		return salaryStructureType;
+	}
+
+	public void setSalaryStructureType(String salaryStructureType) {
+		this.salaryStructureType = salaryStructureType;
+	}
+
+	public String getWorkingSchedule() {
+		return workingSchedule;
+	}
+
+	public void setWorkingSchedule(String workingSchedule) {
+		this.workingSchedule = workingSchedule;
+	}
+
 	public Contract() {
 		// TODO Auto-generated constructor stub
 	}
@@ -32,12 +90,12 @@ public class Contract {
 			com.dev.delta.entities.ContractType contractType, String startDate, String endDate, String description) {
 		super();
 		this.employee = employee;
-		Subject = subject;
-		ContractValue = contractValue;
-		ContractType = contractType;
-		StartDate = startDate;
-		EndDate = endDate;
-		Description = description;
+		this.subject = subject;
+		this.contractValue = contractValue;
+		this.contractType = contractType;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.description = description;
 	}
 
 	public Long getId() {
@@ -57,51 +115,51 @@ public class Contract {
 	}
 
 	public String getSubject() {
-		return Subject;
+		return subject;
 	}
 
 	public void setSubject(String subject) {
-		Subject = subject;
+		this.subject = subject;
 	}
 
 	public String getContractValue() {
-		return ContractValue;
+		return contractValue;
 	}
 
 	public void setContractValue(String contractValue) {
-		ContractValue = contractValue;
+		this.contractValue = contractValue;
 	}
 
 	public ContractType getContractType() {
-		return ContractType;
+		return contractType;
 	}
 
 	public void setContractType(ContractType contractType) {
-		ContractType = contractType;
+		this.contractType = contractType;
 	}
 
 	public String getStartDate() {
-		return StartDate;
+		return startDate;
 	}
 
 	public void setStartDate(String startDate) {
-		StartDate = startDate;
+		this.startDate = startDate;
 	}
 
 	public String getEndDate() {
-		return EndDate;
+		return endDate;
 	}
 
 	public void setEndDate(String endDate) {
-		EndDate = endDate;
+		this.endDate = endDate;
 	}
 
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
 	
 	

@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.dev.delta.entities.Departement;
 import com.dev.delta.repositories.DepartementRepository;
 @Service
+@Transactional
 public class DepartementService {
 	/**
 	 * departementRepository
@@ -58,6 +60,6 @@ public class DepartementService {
 	 * @param id
 	 */
 	public void delete(Long id) {
-		departementRepository.delete(departementRepository.findById(id).get());
+		departementRepository.deleteById(id);
 	}
 }

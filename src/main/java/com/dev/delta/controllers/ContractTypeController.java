@@ -57,8 +57,8 @@ public class ContractTypeController {
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<String> deleteContractType(@PathVariable Long id) {
+	public void deleteContractType(@PathVariable Long id) {
 		contractService.delete(id);
-		return new ResponseEntity<String>("contract was deleted", HttpStatus.OK);
+		
 	}
 }

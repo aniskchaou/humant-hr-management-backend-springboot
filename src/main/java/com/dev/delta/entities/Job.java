@@ -11,23 +11,19 @@ public class Job {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;
-	@ManyToOne
-	@JoinColumn(name="position_id")
-	Position position ;
-	String Description ;
-	String PostedDate;
-	String CloseDate;
+    String name;
+	String description ;
+
 	
 	public Job() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Job(Position position, String description, String postedDate, String closeDate) {
+	public Job(String name, String description) {
 		super();
-		this.position = position;
-		Description = description;
-		PostedDate = postedDate;
-		CloseDate = closeDate;
+		this.name = name;
+		this.description = description;
+
 	}
 
 	public Long getId() {
@@ -38,37 +34,25 @@ public class Job {
 		this.id = id;
 	}
 
-	public Position getPosition() {
-		return position;
+	
+
+	public String getName() {
+		return name;
 	}
 
-	public void setPosition(Position position) {
-		this.position = position;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
 
-	public String getPostedDate() {
-		return PostedDate;
-	}
-
-	public void setPostedDate(String postedDate) {
-		PostedDate = postedDate;
-	}
-
-	public String getCloseDate() {
-		return CloseDate;
-	}
-
-	public void setCloseDate(String closeDate) {
-		CloseDate = closeDate;
-	}
+	
 	
 	
 }
